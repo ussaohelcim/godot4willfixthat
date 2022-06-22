@@ -9,7 +9,9 @@ interface IThread{
 let godot = ["Godot","Godont","godont","godon't","Godon't","godot","Godoh","godoh"]
 
 async function getThread():Promise<IThread> {
-	const link = `${window.location.href}.json` 
+	let l = window.location.href
+	l = l.split("#")[0]
+	const link = `${l}.json` 
 
 	return await fetch(link).then(async (res)=>{
 		const t = await res.json() as IThread
