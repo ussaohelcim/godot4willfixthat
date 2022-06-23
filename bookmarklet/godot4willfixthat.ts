@@ -24,7 +24,7 @@ function getGodotInReply(thread:IThread):string{
 
 	thread.posts.forEach((r)=>{
 		godot.forEach((g)=>{
-			if(r.com.includes(g))
+			if(r.com && r.com.includes(g))
 			{
 				resp.push(`>>${r.no}`)
 			}
